@@ -1,0 +1,34 @@
+<script src="https://unpkg.com/vue@3"></script>
+<!-- 
+    * v-if      더 높은 토글비용
+                조건을 만족하면 객체 생성
+     --------------------------------------
+    * v-show    더 높은 랜더링비용
+                초기에 객체 생성 후, 조건 만족하면 보여주기
+ -->
+<div id="app">
+   <div v-if="counter % 2 == 0">
+        v-if 짝수!
+   </div>
+   <div v-show="counter % 2 == 0">
+        v-show 짝수!
+   </div>
+</div>
+
+<script>
+    var app = Vue.createApp({
+        data() {
+            return {
+                counter: 6
+            }
+        }
+    }).mount('#app')
+</script>
+
+<style>
+    #app{
+        width : 100%;
+        text-align: center;
+        border:1px solid black;
+    }
+</style>
